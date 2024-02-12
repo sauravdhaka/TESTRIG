@@ -2,32 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.gradient-background {
+  position: relative;
+  width: 100%;
+  height: 50px; /* Set the height of your gradient background */
+  background: linear-gradient(to right, #11e83c, #a3ea6f); /* Define the gradient colors */
+  display:  flex;
+  justify-content: space-evenly;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.main-block{
+  width: 100%;
+  min-height: 690px;
+  background: linear-gradient(to right, #11e83c, #a3ea6f);
+}
+
+#list{ 
+  color: white;  
+} 
+
+
+li{ 
+  list-style: none; 
+} 
+
+
+li::before{ 
+  content: "\00BB"; 
+} 
+
+.second-block{
+  width: 100%;
+ min-height: 400px;
+}
+
+.fifth-block{
+  background-image: linear-gradient(45deg,
+  white,
+  rgba(8, 83, 156, 0.75)), url("https://images.spiceworks.com/wp-content/uploads/2022/02/09111418/Software-Testing.jpg");
+  background-repeat  : no-repeat;
+  background-size: 100%;
+  min-height: 300px;
+  width: 100%;
+}
+
+
+.header-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-list li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.header-list li:last-child {
+  margin-right: 0;
+}
+
+.header-list a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+  .header-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .header-list li {
+    margin: 10px 0;
+    display: block;
   }
 }
